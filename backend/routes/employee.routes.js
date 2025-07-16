@@ -8,17 +8,17 @@ const employeeController = require("../controllers/employee.controller");
 const authMiddleware = require("../middlewares/auth.middleware");
 // Create a route to handle the add employee request on post
 router.post(
-  "/api/employee",
+  "/employee",
   // [authMiddleware.verifyToken, authMiddleware.isAdmin],
 
   employeeController.createEmployee
 );
-// router.post("/api/employee", employeeController.createEmployee);
+// router.post("/employee", employeeController.createEmployee);
 
 
 // Create a route to handle the get all employees request on get
 router.get(
-  "/api/employees",
+  "/employees",
   // [authMiddleware.verifyToken, authMiddleware.isAdmin],
 
   employeeController.getAllEmployees
@@ -26,28 +26,28 @@ router.get(
 
 // Create a route to handle getting an employee by ID
 router.get(
-  "/api/employees/:id", 
+  "/employees/:id", 
   // [authMiddleware.verifyToken, authMiddleware.isAdmin],
   employeeController.getEmployeeById
 );
 
 // Create a route to handle getting an employee by role
-router.get("/api/employees/role/:roleId", employeeController.getEmployeesByRole);
+router.get("/employees/role/:roleId", employeeController.getEmployeesByRole);
 
 // Fetch tasks assigned to the employee 
-router.get("/api/employees/:employee_id/tasks", employeeController.getEmployeeTasks);
+router.get("/employees/:employee_id/tasks", employeeController.getEmployeeTasks);
 
 // Update task status
-router.put("/api/employees/tasks/:task_id/status", employeeController.updateTaskStatus);
+router.put("/employees/tasks/:task_id/status", employeeController.updateTaskStatus);
 
 router.put(
-  "/api/employees/:id",
+  "/employees/:id",
   // [authMiddleware.verifyToken, authMiddleware.isAdmin],
   employeeController.updateEmployee
 );
 
 router.delete(
-  "/api/employees/:id",
+  "/employees/:id",
   // [authMiddleware.verifyToken, authMiddleware.isAdmin],
   employeeController.deleteEmployee
 );

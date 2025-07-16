@@ -4,30 +4,30 @@ const vehicleController = require("../controllers/vehicle.controller");
 const authMiddleware = require("../middlewares/auth.middleware");
 
 // Create a new vehicle
-// router.post('/api/vehicle', authMiddleware.verifyToken, vehicleController.createVehicle);
-router.post("/api/vehicle", vehicleController.createVehicle);
+// router.post('/vehicle', authMiddleware.verifyToken, vehicleController.createVehicle);
+router.post("/vehicle", vehicleController.createVehicle);
 
 // Get all vehicles
-// router.get('/api/vehicles', authMiddleware.verifyToken, vehicleController.getAllVehicles);
-router.get("/api/vehicles", vehicleController.getAllVehicles);
+// router.get('/vehicles', authMiddleware.verifyToken, vehicleController.getAllVehicles);
+router.get("/vehicles", vehicleController.getAllVehicles);
 
 // Get a specific vehicle by ID
 router.get(
-  "/api/vehicles/:id",
+  "/vehicles/:id",
   authMiddleware.verifyToken,
   vehicleController.getVehicleById
 );
 
 
 router.put(
-  "/api/vehicles/:id",
+  "/vehicles/:id",
 
   vehicleController.updateVehicle
 );
 
 
 router.delete(
-  "/api/vehicles/:id",
+  "/vehicles/:id",
 
   vehicleController.deleteVehicle
 );

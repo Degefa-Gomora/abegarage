@@ -4,12 +4,12 @@ const serviceController = require("../controllers/service.controller");
 const authMiddleware = require("../middlewares/auth.middleware");
 
 // Get all services
-// router.get('/api/services', authMiddleware.verifyToken, serviceController.getAllServices);
-router.get("/api/services", serviceController.getAllServices);
+// router.get('/services', authMiddleware.verifyToken, serviceController.getAllServices);
+router.get("/services", serviceController.getAllServices);
 
 // Add a new service
 router.post(
-  "/api/services",
+  "/services",
   authMiddleware.verifyToken,
   authMiddleware.isAdmin,
   serviceController.createService
@@ -17,7 +17,7 @@ router.post(
 
 // Update a service
 router.put(
-  "/api/services/:id",
+  "/services/:id",
   authMiddleware.verifyToken,
   authMiddleware.isAdmin,
   serviceController.updateService
@@ -25,7 +25,7 @@ router.put(
 
 // Delete a service
 router.delete(
-  "/api/services/:id",
+  "/services/:id",
   authMiddleware.verifyToken,
   authMiddleware.isAdmin,
   serviceController.deleteService
