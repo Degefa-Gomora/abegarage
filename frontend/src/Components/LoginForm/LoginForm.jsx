@@ -98,7 +98,7 @@ function LoginForm() {
         <div className="contact-title">
           <h2>Login to your account</h2>
         </div>
-
+        <p>First login as admin using email:admin@admin.com and password:123456. Then add employ,customer,services,order and test other functionality</p>
         {/* Toggle between Employee and Customer */}
         <div className="login-toggle">
           <label>
